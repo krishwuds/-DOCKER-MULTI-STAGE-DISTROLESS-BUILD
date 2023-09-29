@@ -3,7 +3,7 @@ FROM python:3.11.4 as builder
 WORKDIR /app
 COPY calculator.py /app/
 RUN pip install pyinstaller
-RUN pyinstaller --onefile --enconding=utf-8 calculator.py
+RUN pyinstaller --onefile calculator.py
 
 # Stage 2: Create a distroless final image
 FROM gcr.io/distroless/python3
